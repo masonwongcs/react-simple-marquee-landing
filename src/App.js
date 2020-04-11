@@ -4,6 +4,7 @@ import axios from "axios";
 import {
   Header,
   Code,
+  Version,
   ButtonWrapper,
   ViewOnGithub,
   ViewOnNpm,
@@ -17,16 +18,17 @@ import "./App.css";
 
 require("babel-polyfill");
 
+const API_ENDPOINT =
+  "https://raw.githubusercontent.com/masonwongcs/react-simple-marquee/master/package.json";
+
 const App = () => {
   const [version, setVersion] = useState("1.0.0");
   async function getVersion() {
-    await axios
-      .get("https://registry.npmjs.org/react-simple-marquee")
-      .then(response => {
-        const { data } = response;
-        const currentVersion = data["dist-tags"]?.latest;
-        setVersion(currentVersion);
-      });
+    await axios.get(API_ENDPOINT).then(response => {
+      const { data } = response;
+      const currentVersion = data.version;
+      setVersion(currentVersion);
+    });
   }
 
   useEffect(() => {
@@ -56,16 +58,16 @@ const App = () => {
           href="https://www.npmjs.com/package/react-simple-marquee"
         >
           <FaNpm />
-          View on npm {version}
+          View on npm
         </ViewOnNpm>
       </ButtonWrapper>
-
+      <Version>Current version: {version}</Version>
       <main>
         <Browser>
           <div className="browser-header">
-            <span className="dot red"></span>
-            <span className="dot yellow"></span>
-            <span className="dot green"></span>
+            <span className="dot red" />
+            <span className="dot yellow" />
+            <span className="dot green" />
           </div>
           <div className="browser-container">
             <div className="block-wrapper">

@@ -34,6 +34,13 @@ export const Header = styled.div`
   }
 `;
 
+export const Version = styled.div`
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 1.2rem;
+`
+
 export const ButtonWrapper = styled.div`
   margin: 2rem auto 0;
   display: flex;
