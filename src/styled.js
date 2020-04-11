@@ -149,7 +149,7 @@ export const Footer = styled.footer`
   color: #eee;
   display: flex;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: ${ISMOBILE ? "0.7rem" : "0.9rem"};
   > a {
     text-decoration: none;
     color: #eee;
