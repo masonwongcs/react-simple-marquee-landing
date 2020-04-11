@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Marquee from "react-simple-marquee";
+import axios from "axios";
 import {
   Header,
   Code,
@@ -14,7 +15,24 @@ import { FaGithub, FaNpm } from "react-icons/fa";
 import { GiMeshBall } from "react-icons/gi";
 import "./App.css";
 
+require("babel-polyfill");
+
 const App = () => {
+  const [version, setVersion] = useState("1.0.0");
+  async function getVersion() {
+    await axios
+      .get("https://registry.npmjs.org/react-simple-marquee")
+      .then(response => {
+        const { data } = response;
+        const currentVersion = data["dist-tags"]?.latest;
+        setVersion(currentVersion);
+      });
+  }
+
+  useEffect(() => {
+    getVersion();
+  });
+
   return (
     <div className="app">
       <Header>
@@ -38,7 +56,7 @@ const App = () => {
           href="https://www.npmjs.com/package/react-simple-marquee"
         >
           <FaNpm />
-          View on npm
+          View on npm {version}
         </ViewOnNpm>
       </ButtonWrapper>
 
