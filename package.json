@@ -1,18 +1,12 @@
 {
-  "name": "parcel-reactjs",
-  "version": "1.0.0",
-  "description": "A minimal React.js boilerplate with parcel as bundler",
-  "main": "index.js",
-  "scripts": {
-    "start": "parcel ./src/index.html --open"
-  },
-  "keywords": [
-    "parcel",
-    "react"
-  ],
-  "author": "“Robin <“wrobin@gmx.net”> (https://www.robinwieruch.de)",
-  "license": "MIT",
+  "name": "react-sample",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react-scripts": "3.4.1",
     "axios": "^0.19.2",
     "ismobilejs": "^1.0.3",
     "npm-registry-client": "^8.6.0",
@@ -23,8 +17,26 @@
     "react-simple-marquee": "^1.2.0",
     "styled-components": "^5.1.0"
   },
-  "devDependencies": {
-    "babel-polyfill": "^6.26.0",
-    "parcel-bundler": "^1.12.3"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "publish": "cd build && surge --domain https://react-simple-marquee.surge.sh"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -16,7 +16,7 @@ import { FaGithub, FaNpm } from "react-icons/fa";
 import { GiMeshBall } from "react-icons/gi";
 import "./App.css";
 
-require("babel-polyfill");
+// require("babel-polyfill");
 
 const API_ENDPOINT =
   "https://raw.githubusercontent.com/masonwongcs/react-simple-marquee/master/package.json";
