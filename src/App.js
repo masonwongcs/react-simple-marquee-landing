@@ -95,7 +95,7 @@ const App = () => {
                 color: "#aaa"
               }}
               speed={3}
-              direction={"left-right"}
+              direction={"right-left"}
             >
               This is a another marquee with the speed of 3x and custom style
             </Marquee>

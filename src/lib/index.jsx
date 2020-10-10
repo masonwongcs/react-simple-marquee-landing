@@ -13,7 +13,7 @@ const Marquee = ({ speed, direction = "right-left", style, children }) => {
     direction
   );
   return (
-    <div style={{ overflow: "hidden", ...style }}>
+    <div style={{ overflow: "hidden", ...style }} key={children}>
       <div
         className="text-wrapper"
         style={{
