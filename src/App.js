@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Marquee from "react-simple-marquee";
+import Marquee from "./lib/index"
 import axios from "axios";
 import {
   Header,
@@ -9,7 +9,6 @@ import {
   ViewOnGithub,
   ViewOnNpm,
   Browser,
-  Carbon,
   Footer
 } from "./styled";
 import { FaGithub, FaNpm } from "react-icons/fa";
@@ -81,6 +80,7 @@ const App = () => {
                 height: "2rem",
                 lineHeight: "2rem"
               }}
+              direction={"left-right"}
             >
               This is a very simple marquee
             </Marquee>
