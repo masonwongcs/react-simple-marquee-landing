@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export const NEGATIVE_VALUE = ["right-left", "left-right"];
+export const NEGATIVE_VALUE = ["right-left", "bottom-top"];
 export const VERTICAL_VALUE = ["top-bottom", "bottom-top"];
 
 export const useAnimationPlayState = () => {
